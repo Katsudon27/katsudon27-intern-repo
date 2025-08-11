@@ -18,5 +18,14 @@
 - Never share proprietary code, client data, or confidential information with AI tools.
 - Use only approved and secure AI platforms.
 
+🛠️ Task
+
+## Identify one task you can improve using an AI tool, and try it out.
+- I used GitHub Copilot to generate a D3.js line chart showing monthly mobile phone offence trends for one of my assignments. 
+
+## Review the AI-generated output critically—did it require editing or fact-checking?
+- Copilot provided a functional starting point, but chart elements (axes, labels) were misaligned and the coding style did not match my project conventions.
+- I adjusted element positions, renamed variables for clarity and consistency, and added error handling to match my project’s standards.
+
 ## Document one best practice you will follow when using AI tools at Focus Bear.
 - I will always review AI-generated code to ensure that it is secure, accurate and complies with the coding standards before making any commits to the repository.
