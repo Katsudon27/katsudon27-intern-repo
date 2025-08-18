@@ -18,6 +18,6 @@
     - Stage it but don’t commit (git add <file>).
     - Check the status (git status).
     - Unstage the file (git reset HEAD <file>).
-    - Commit the file (git commit -m <message>)
+    - Commit the file (git commit -m <message>).
 
 - ![Screenshot of me experimenting with the terminal](images/git_terminal_experiment.png) 
