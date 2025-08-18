@@ -1,4 +1,5 @@
-# Clean Code Principles
+# Task #61 (Understanding Clean Code Principles)
+## Clean Code Principles 
 1. Simplicity – Keep code as simple as possible.
     - Avoid unnecessary complexity or features that aren’t required. Simple code is easier to understand, debug, and maintain.
 2. Readability – Code should be easy to understand.
@@ -10,17 +11,17 @@
 5. Efficiency – Write performant, optimized code without premature over-engineering.
     - Focus on clean logic first, then improve efficiency when necessary.
 
-# Example of messy code
+## Example of messy code
 function calc(a,b,c){
 let r=0; for(let i=0;i<a.length;i++){r+=a[i]*b[i]+c;} return r;}
 
-## Why it is difficult to read
+### Why it is difficult to read
 - Poor indentation and spacing.
 - Non-descriptive variable names (a, b, c, r).
 - Single-line logic makes it hard to follow what the function does.
 - Lacks comments or documentation.
 
-# Cleaned-up ver
+## Cleaned-up ver
 /**
  * Calculates the sum of element-wise multiplication of two arrays plus a constant.
  */
@@ -35,7 +36,7 @@ function calculateSum(arr1, arr2, constant) {
     return total;
 }
 
-## Improvements made:
+### Improvements made:
 - Added meaningful function and variable names.
 - Broke the logic into multiple lines with proper indentation.
 - Added comments to explain the purpose of the function.
