@@ -40,3 +40,21 @@ function calculateSum(arr1, arr2, constant) {
 - Added meaningful function and variable names.
 - Broke the logic into multiple lines with proper indentation.
 - Added comments to explain the purpose of the function.
+
+---
+
+# Task #62 (Code Formatting & Style Guides)
+
+## Why is code formatting important? 
+- Consistent code formatting improves readability, reduces misunderstandings, and makes collaboration smoother.
+- It ensures all team members follow the same conventions, reducing bugs caused by misinterpreted code.
+- Tools like linters and formatters enforce these rules automatically, saving time and preventing style arguments in code reviews.
+## What issues did the linter detect?
+- It managed to detect issues like missing reference error that occurred when I tried to integrate Prettier such that it would work with Eslint in my development environment.
+- It also detected an error whereby the React version was not specified in the configuration settings.
+- I managed to resolve it by referring to the official documentation from Prettier and Eslint by adding the missing references and configurations that are required. 
+
+## Did formatting the code make it easier to read?
+- The linter highlighted several style inconsistencies in my code that I hadn’t noticed before, especially indentation and variable naming issues.
+- Running Prettier made the code much easier to read at a glance and ensured consistency across files.
+- Using linters and formatters early in development can prevent messy code from accumulating, saving time in code reviews and debugging.
