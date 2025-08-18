@@ -22,6 +22,8 @@
 
 - ![Screenshot of me experimenting with the terminal](images/git_terminal_experiment.png)
 
+--- 
+
 # Reflection for Task #55 (Branching & Team Collaboration)
 
 ## Why is pushing directly to main problematic?
@@ -43,6 +45,8 @@
 - I switched back to the main branch with "git checkout main" and verified that the changes are not there.
 - Screenshot as evidence:
 ![Screenshot of my git branch experiment](images/git_branch_experiment.png)
+
+---
 
 # Reflection for Task #57 (Advanced Git Commands & When to Use Them)
 
@@ -87,6 +91,8 @@
 - Screenshot of my command history as evidence for my experiment:
 ![Screenshot of my git advanced commands experiment](images/git_advanced_experiment.png)
 
+---
+
 # Reflection for Task #58 (Understand git bisect)
 
 ## What does git bisect do?
@@ -110,6 +116,8 @@
 - Once I identified the bad commit, I resetted the repo with git bisect reset.
 - Screenshot as evidence:
 ![Screenshot of my git bisect test scenario](images/git_bisect_evidence.png)
+
+---
 
 # Reflection for Task #59 (Writing Meaningful Commit Messages)
 
@@ -142,4 +150,31 @@ Updated tooltip formatting
 Added console logs for debugging"). 
 - Screenshot as evidence from my git log:
 ![Screenshot of my commit messages](images/git_commit_evidence.png)
+
+---
+
+# Reflection for Task #60 (Pull Requests)
+
+## Why are PRs important in a team workflow?
+- To enable peer review and maintain code quality.
+- Provide discussion and testing before merging.
+
+## What makes a well-structured PR?
+- Clear title and description.
+- Linked issues or tasks.
+- Small, focused, and reviewable changes.
+- Screenshots or examples for UI updates.
+
+## What did you learn from reviewing an open-source PR?
+- PR reviews are collaborative and constructive.
+- Maintaining small, focused changes simplifies the review process.
+- Effective communication in PRs improves team efficiency and reduces mistakes.
+
+## Pull Request task
+- I created a new branch called pr-branch using git checkout -b pr-branch
+- I made and committed a small change to test.py and published the branch to GitHub using VS Code's GitHub tool.
+- I used the GitHub desktop client to open a PR with meaningful title and description linked to GitHub issue #60.
+- I merged the PR and deleted the branch via the GitHub website.
+- Screenshot from GitHub website as evidence:
+![Screenshot of my PR](images/git_pr_evidence.png)
 
