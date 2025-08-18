@@ -1,4 +1,4 @@
-# Summary for Task #54
+# Summary for Task #54 (Git concept: staging vs committing)
 
 ## What is the difference between staging and committing?
 - Staging means preparing specific changes to be included in the next commit.
@@ -22,7 +22,7 @@
 
 - ![Screenshot of me experimenting with the terminal](images/git_terminal_experiment.png)
 
-# Reflection for Task #55
+# Reflection for Task #55 (Branching & Team Collaboration)
 
 ## Why is pushing directly to main problematic?
 - Pushing directly to main can break the main codebase if untested or incomplete code is introduced.
@@ -44,7 +44,7 @@
 - Screenshot as evidence:
 ![Screenshot of my git branch experiment](images/git_branch_experiment.png)
 
-# Reflection for Task #57
+# Reflection for Task #57 (Advanced Git Commands & When to Use Them)
 
 ## Advanced Git Commands & When to Use Them
 1. git checkout main -- <file>
@@ -86,3 +86,27 @@
 - git blame can help with accountability and understanding project history, but I realised it can be overwhelming for very large files.
 - Screenshot of my command history as evidence for my experiment:
 ![Screenshot of my git advanced commands experiment](images/git_advanced_experiment.png)
+
+# Reflection for Task #58 (Understand git bisect)
+
+## What does git bisect do?
+- Finds the first commit that introduced a bug using binary search.
+
+## When would you use it in a real-world debugging situation?
+- Useful for long-lived repositories with hundreds of commits.
+- Quickly isolates problematic code without manually reviewing every commit.
+
+## How does it compare to manually reviewing commits?
+- Manual review is slow and error-prone.
+- Bisect saves time by systematically narrowing down the offending commit.
+
+## Test Scenario
+- I made a series of commits in this repository by adding new lines to test.py.
+- I introduced a syntax error to the file in one of the commits.
+- I used git bisect to track down the commit that caused the bug. 
+- I used git bisect start and git bisect bad to mark the current commit as bad.
+- I used git bisect good <commit-hash> to mark a known good commit before the bug appeared.
+- I then use git bisect good or git bisect bad to mark the code as good or bad based on what I see. 
+- Once I identified the bad commit, I resetted the repo with git bisect reset.
+- Screenshot as evidence:
+![Screenshot of my git bisect test scenario](images/git_bisect_evidence.png)
