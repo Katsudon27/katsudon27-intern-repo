@@ -31,3 +31,7 @@
 ## How can keyboard shortcuts improve your productivity?
 - Keyboard shortcuts remove the need to constantly switch between keyboard and mouse, which speeds up common actions like navigation and code editing. 
 - Over time, this reduces cognitive load and improves workflow efficiency, allowing me to focus more on problem-solving instead of interface interactions.
+- For example, while working on a small Python project, I had a function name repeated multiple times across the same file. Using Ctrl + D, I was able to quickly select each occurrence and rename them consistently without manually searching. This saved me several minutes compared to using the mouse and search function.
+
+## Screenshot of VS Code setup
+![Screenshot of micro break exercise on Focus Bear](images/micro_break_posture_evidence.png) 
