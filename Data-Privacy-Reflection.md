@@ -1,12 +1,12 @@
 # 📝 Reflection
 
 ## What steps can you take to ensure you handle data securely in your daily tasks?
-- Always use strong, unique passwords and a reputable password manager.
-- Enable multi-factor authentication (MFA) on all work accounts.
-- Access sensitive data only on secure, encrypted networks (avoid public Wi-Fi unless using a VPN).
+- I will use Bitwarden as my password manager to generate and store strong, unique passwords.
+- I will enable multi-factor authentication (MFA) on all my work and personal accounts, including GitHub and Google Workspace.
+- When working remotely, I will connect through my NordVPN client to avoid risks on public Wi-Fi.
 
 ## How should you store, share, and dispose of sensitive information safely?
-- Store sensitive files in encrypted storage (e.g., company-approved cloud storage with appropriate encryption mechanisms)
+- Store sensitive files in company-approved cloud storage with appropriate encryption mechanisms such as OneDrive.
 - Share data only through secure channels (e.g., encrypted email, secure file transfer tools).
 - Shred physical documents and use secure delete tools for digital files when disposing of data.
 
@@ -17,10 +17,14 @@
     - Leaving devices unlocked while away
     - Not updating software on your devices
 - How to avoid:
-    - Use a password manager to generate strong and random passwords.
+    - Use a password manager such as Bitwarden to generate strong and random passwords.
     - Only use company-approved encrypted platforms to send sensitive data.
     - Enable auto-lock and logging out when away.
     - Enable automatic updates to patch security vulnerabilities.
+
+## Brief anecdote on when I failed to apply one of the practices
+- In the past, I reused weak passwords across multiple accounts because it felt easier than managing unique ones. This created a serious risk of data leakage if just one account was compromised. 
+- Since then, I’ve shifted to using Bitwarden to generate and manage strong, unique passwords for all my accounts. Going forward, I will continue this habit and regularly audit my saved credentials.
 
 # 🛠️ Task
 
