@@ -42,4 +42,47 @@
 - I made a small change to the test file and committed it in the new branch.
 - I switched back to the main branch with "git checkout main" and verified that the changes are not there.
 - Screenshot as evidence:
-![Screenshot of my git branch experiment](images/git_branch_experiment.png) 
+![Screenshot of my git branch experiment](images/git_branch_experiment.png)
+
+# Reflection for Task #57
+
+## Advanced Git Commands & When to Use Them
+1. git checkout main -- <file>
+- What it does:
+    - Restores a specific file from the main branch to your current branch without affecting other changes.
+- when to use it:
+    - If you made changes to a file in your feature branch and want to discard those changes, but don’t want to reset the entire branch, this command restores the file to its state on main.
+- Experiment reflection:
+    - I modified test.py in my testing branch and ran git checkout main -- test.py. The file reverted to the version on main while other files in my branch stayed untouched.
+    - Useful for undoing mistakes on specific files without affecting other work.
+
+2. git cherry-pick <commit>
+- What it does:
+    - Applies a single commit from another branch onto your current branch without merging the entire branch.
+- when to use it:
+    - When a specific bug fix or feature commit needs to be applied to main immediately without merging the whole feature branch.
+- Experiment reflection:
+    - I committed a small modification to test.py on testing branch and then used the command onto the main branch. The change was applied successfully and the main branch only received that single commit.
+
+3. git log
+- What it does:
+    - Displays the commit history, showing commit messages, authors, dates, and commit hashes.
+- when to use it:
+    - To understand the evolution of a project, track when features or fixes were introduced, or find the commit hash for cherry-picking or reverting.
+- Experiment reflection:
+    - Running the command helped me see all previous commits in reverse chronological order.
+
+4. git blame <file>
+- What it does:
+    - Shows who last modified each line of a file and when.
+- when to use it:
+    - To trace responsibility for specific lines of code, understand the context of a change, or debug an issue by seeing who introduced it.
+- Experiment reflection:
+    - I ran the command and saw exactly which commit last changed each line.
+    - This is helpful in team projects to track down changes or ask questions to the right person.
+
+## Learnings and Surprises
+- I was surprised by how the cherry-pick command uses the commit hash as I had never used it before. 
+- git blame can help with accountability and understanding project history, but I realised it can be overwhelming for very large files.
+- Screenshot of my command history as evidence for my experiment:
+![Screenshot of my git advanced commands experiment](images/git_advanced_experiment.png)
