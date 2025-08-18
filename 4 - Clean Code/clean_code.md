@@ -1,5 +1,7 @@
 # Task #61 (Understanding Clean Code Principles)
+
 ## Clean Code Principles 
+
 1. Simplicity – Keep code as simple as possible.
     - Avoid unnecessary complexity or features that aren’t required. Simple code is easier to understand, debug, and maintain.
 2. Readability – Code should be easy to understand.
@@ -12,18 +14,21 @@
     - Focus on clean logic first, then improve efficiency when necessary.
 
 ## Example of messy code
+
 function calc(a,b,c){
 let r=0; for(let i=0;i<a.length;i++){r+=a[i]*b[i]+c;} return r;}
 
 ### Why it is difficult to read
+
 - Poor indentation and spacing.
 - Non-descriptive variable names (a, b, c, r).
 - Single-line logic makes it hard to follow what the function does.
 - Lacks comments or documentation.
 
 ## Cleaned-up ver
+
 /**
- * Calculates the sum of element-wise multiplication of two arrays plus a constant.
+  Calculates the sum of element-wise multiplication of two arrays plus a constant.
  */
 
 function calculateSum(arr1, arr2, constant) {
@@ -36,7 +41,8 @@ function calculateSum(arr1, arr2, constant) {
     return total;
 }
 
-### Improvements made:
+### Improvements made
+
 - Added meaningful function and variable names.
 - Broke the logic into multiple lines with proper indentation.
 - Added comments to explain the purpose of the function.
@@ -45,16 +51,20 @@ function calculateSum(arr1, arr2, constant) {
 
 # Task #62 (Code Formatting & Style Guides)
 
-## Why is code formatting important? 
+## Why is code formatting important?
+
 - Consistent code formatting improves readability, reduces misunderstandings, and makes collaboration smoother.
 - It ensures all team members follow the same conventions, reducing bugs caused by misinterpreted code.
 - Tools like linters and formatters enforce these rules automatically, saving time and preventing style arguments in code reviews.
+
 ## What issues did the linter detect?
+
 - It managed to detect issues like missing reference error that occurred when I tried to integrate Prettier such that it would work with Eslint in my development environment.
 - It also detected an error whereby the React version was not specified in the configuration settings.
-- I managed to resolve it by referring to the official documentation from Prettier and Eslint by adding the missing references and configurations that are required. 
+- I managed to resolve it by referring to the official documentation from Prettier and Eslint by adding the missing references and configurations that are required.
 
 ## Did formatting the code make it easier to read?
+
 - The linter highlighted several style inconsistencies in my code that I hadn’t noticed before, especially indentation and variable naming issues.
 - Running Prettier made the code much easier to read at a glance and ensured consistency across files.
 - Using linters and formatters early in development can prevent messy code from accumulating, saving time in code reviews and debugging.
@@ -64,16 +74,19 @@ function calculateSum(arr1, arr2, constant) {
 # Task #63 (Naming Variables & Functions)
 
 ## What makes a good variable or function name?
+
 - A good name clearly describes the purpose or action, so someone reading the code can understand its intent without extra comments.
 - Use nouns for variables (e.g., userList, totalPrice) and verbs for functions (e.g., calculateTotal(), fetchUserData()).
 - Follow consistent naming conventions (camelCase for JavaScript).
 
 ## What issues can arise from poorly named variables?
+
 - Ambiguous names make the code hard to read and understand.
 - Can cause bugs if a developer misinterprets the purpose of a variable or function.
 - Makes collaboration harder and slower, as teammates need extra effort to figure out what each piece of code does.
 
 ## How did refactoring improve code readability?
+
 - Example of poor naming:
 let a = 100;
 function doIt(x, y) {
@@ -87,3 +100,54 @@ function calculateSum(value1, value2) {
 }
 
 - Refactoring made the code self-documenting, easier to follow, and reduced the cognitive load needed to understand what the code is doing.
+
+---
+
+# Task #64 (Writing Small, Focused Functions)
+
+## Why is breaking down functions beneficial?
+
+- It can improve readability of the code because smaller functions.
+
+## How did refactoring improve the structure of the code?
+
+- Example of a long function:
+function processOrders(orders) {
+  let total = 0;
+  for (let order of orders) {
+    // calculate discount
+    if (order.quantity > 10) {
+      order.price *= 0.9;
+    }
+    total += order.price * order.quantity;
+    // send invoice
+    console.log(`Invoice sent for order ${order.id}`);
+  }
+  console.log(`Total revenue: ${total}`);
+}
+
+- Refactored version:
+
+function calculateDiscount(order) {
+  if (order.quantity > 10) order.price *= 0.9;
+}
+
+function sendInvoice(order) {
+  console.log(`Invoice sent for order ${order.id}`);
+}
+
+function calculateTotalRevenue(orders) {
+  let total = 0;
+  for (let order of orders) {
+    calculateDiscount(order);
+    total += order.price * order.quantity;
+    sendInvoice(order);
+  }
+  return total;
+}
+
+- Improvements made:
+
+  - Each function now has a single responsibility.
+  - Code is easier to read and understand.
+  - Bugs are easier to trace, since logic is separated.
