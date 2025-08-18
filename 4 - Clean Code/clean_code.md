@@ -58,3 +58,32 @@ function calculateSum(arr1, arr2, constant) {
 - The linter highlighted several style inconsistencies in my code that I hadn’t noticed before, especially indentation and variable naming issues.
 - Running Prettier made the code much easier to read at a glance and ensured consistency across files.
 - Using linters and formatters early in development can prevent messy code from accumulating, saving time in code reviews and debugging.
+
+---
+
+# Task #63 (Naming Variables & Functions)
+
+## What makes a good variable or function name?
+- A good name clearly describes the purpose or action, so someone reading the code can understand its intent without extra comments.
+- Use nouns for variables (e.g., userList, totalPrice) and verbs for functions (e.g., calculateTotal(), fetchUserData()).
+- Follow consistent naming conventions (camelCase for JavaScript).
+
+## What issues can arise from poorly named variables?
+- Ambiguous names make the code hard to read and understand.
+- Can cause bugs if a developer misinterprets the purpose of a variable or function.
+- Makes collaboration harder and slower, as teammates need extra effort to figure out what each piece of code does.
+
+## How did refactoring improve code readability?
+- Example of poor naming:
+let a = 100;
+function doIt(x, y) {
+  return x + y;
+}
+
+- Refactored version:
+let totalUsers = 100;
+function calculateSum(value1, value2) {
+    return value1 + value2;
+}
+
+- Refactoring made the code self-documenting, easier to follow, and reduced the cognitive load needed to understand what the code is doing.
