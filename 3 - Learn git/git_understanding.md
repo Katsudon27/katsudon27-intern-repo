@@ -110,3 +110,36 @@
 - Once I identified the bad commit, I resetted the repo with git bisect reset.
 - Screenshot as evidence:
 ![Screenshot of my git bisect test scenario](images/git_bisect_evidence.png)
+
+# Reflection for Task #59 (Writing Meaningful Commit Messages)
+
+## What makes a good commit message?
+- A concise summary of the change.
+- Clear, readable, and actionable.
+- Explains why the change was made, not just what
+
+## How does a clear commit message help in team collaboration?
+- Makes reviewing code faster.
+- Helps teammates understand changes without reading all the code.
+- Improves debugging and tracking history of the project.
+
+## How can poor commit messages cause issues later?
+- Hard to understand the purpose of a change.
+- Difficult to track down where bugs were introduced.
+- Slows down team collaboration and code reviews.
+
+## Commit message task
+- I added a commit with vague message ("Fixed stuff").
+- I added a commit with overly detailed message ("Fixed bug that was causing the mobile phone offence visualisation chart to not render correctly due to missing scale conversion between x-axis months and y-axis fines counts, adjusted colors, font sizes, tooltips, and added console logs to track the rendering process").
+- I added a commit with well-structured message ("[Bug] Fix mobile offence chart rendering
+
+Corrected x-axis month scaling
+
+Adjusted y-axis fine counts
+
+Updated tooltip formatting
+
+Added console logs for debugging"). 
+- Screenshot as evidence from my git log:
+![Screenshot of my commit messages](images/git_commit_evidence.png)
+
