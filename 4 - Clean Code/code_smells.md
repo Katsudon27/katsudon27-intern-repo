@@ -1,5 +1,7 @@
 # Reflection
-## Find or write code examples that demonstrate the following code smells:
+
+## Find or write code examples that demonstrate the following code smells
+
 ```javascript
 class User {
     constructor(name, age) {
@@ -37,7 +39,8 @@ class User {
 
 ```
 
-## Refactor the code to eliminate these code smells.
+## Refactor the code to eliminate these code smells
+
 ```javascript
 const MIN_AGE = 18;
 const MAX_AGE = 100;
@@ -86,19 +89,21 @@ class User {
     }
 ```
 
-
 ## What code smells did you find in your code?
+
 - Magic numbers and strings ("1234", 18, 100).
 - Long function processUser doing multiple things.
 - Duplicate logic for greeting the user.
 
 ## How did refactoring improve the readability and maintainability of the code?
+
 - Extracted constants for clarity and easier updates.
 - Broke long functions into smaller, single-purpose functions.
 - Removed duplicate logic by moving all greeting-related logic into _greetUser().
 - Improved structure makes future changes easier and safer.
 
 ## How can avoiding code smells make future debugging easier?
+
 - Clear and modular code helps identify where errors occur quickly.
 - Easier to test individual functions.
 - Reduces the risk of introducing new bugs when updating logic.

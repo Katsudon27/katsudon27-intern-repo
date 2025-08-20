@@ -1,6 +1,6 @@
 # Task #61 (Understanding Clean Code Principles)
 
-## Clean Code Principles 
+## Clean Code Principles
 
 1. Simplicity – Keep code as simple as possible.
     - Avoid unnecessary complexity or features that aren’t required. Simple code is easier to understand, debug, and maintain.
@@ -15,7 +15,7 @@
 
 ## Example of messy code
 
-```
+```javascript
 
 function calc(a,b,c){
 let r=0; for(let i=0;i<a.length;i++){r+=a[i]*b[i]+c;} return r;}
@@ -31,7 +31,7 @@ let r=0; for(let i=0;i<a.length;i++){r+=a[i]*b[i]+c;} return r;}
 
 ## Cleaned-up ver
 
-```
+```javascript
 /**
   Calculates the sum of element-wise multiplication of two arrays plus a constant.
  */
@@ -96,7 +96,7 @@ function calculateSum(arr1, arr2, constant) {
 
 - Example of poor naming:
 
-```
+```javascript
 let a = 100;
 function doIt(x, y) {
   return x + y;
@@ -104,7 +104,8 @@ function doIt(x, y) {
 ```
 
 - Refactored version:
-```
+
+```javascript
 let totalUsers = 100;
 function calculateSum(value1, value2) {
     return value1 + value2;
@@ -125,7 +126,8 @@ function calculateSum(value1, value2) {
 ## How did refactoring improve the structure of the code?
 
 - Example of a long function:
-```
+
+```javascript
 function processOrders(orders) {
   let total = 0;
   for (let order of orders) {
@@ -142,7 +144,8 @@ function processOrders(orders) {
 ```
 
 - Refactored version:
-```
+
+```javascript
 function calculateDiscount(order) {
   if (order.quantity > 10) order.price *= 0.9;
 }
@@ -173,11 +176,14 @@ function calculateTotalRevenue(orders) {
 # Task #65 (Writing Small, Focused Functions)
 
 ## Research the "Don't Repeat Yourself" (DRY) principle
+
 - The principle means that every piece of knowledge or logic should only exist in one place in your codebase. Duplication will lead to bugs and make it harder to maintain the codebase.
 
 ## What were the issues with duplicated code?
+
 - Duplicated code example:
-```
+
+```javascript
 function calculateCircleArea(radius) {
   return 3.14 * radius * radius;
 }
@@ -186,13 +192,15 @@ function calculateCylinderVolume(radius, height) {
   return 3.14 * radius * radius * height;
 }
 ```
+
 - Duplicated code caused unnecessary repetition of the same logic across multiple functions. In this example, the formula for calculating the circle’s area was duplicated in both functions.
 - This made the code harder to maintain, since updating one formula would require changing it in several places.
 
-
 ## How did refactoring improve maintainability?
+
 - After refactoring:
-```
+
+```javascript
 function calculateCircleArea(radius) {
   return Math.PI * radius * radius;
 }
@@ -201,7 +209,8 @@ function calculateCylinderVolume(radius, height) {
   return calculateCircleArea(radius) * height;
 }
 ```
-- By extracting the duplicated logic into a single function, I made the code more maintainable and easier to extend. 
+
+- By extracting the duplicated logic into a single function, I made the code more maintainable and easier to extend.
 - Now, if the formula for calculating a circle’s area ever changes, I only need to update it once.
 - This improves readability, reduces the chance of bugs, and keeps the codebase clean.
 
@@ -210,7 +219,9 @@ function calculateCylinderVolume(radius, height) {
 # Task #66 (Refactoring Code for Simplicity)
 
 ## What made the original code complex?
+
 - Example of complex code:
+
 ```javascript
 function calculateTotal(items) {
   let total = 0;
@@ -228,23 +239,29 @@ function calculateTotal(items) {
   return total;
 }
 ```
+
 - The original code had redundant if-else checks for every combination of price and quantity, making it harder to read and maintain.
 
 ## How did refactoring improve it?
+
 - After refactoring:
+
 ```javascript
 function calculateTotal(items) {
   return items.reduce((sum, item) => sum + (item.price || 0) * (item.quantity || 1), 0);
 }
 ```
+
 - By using reduce and default values, the function became concise, easier to read, and maintainable. It also handles edge cases more elegantly without extra conditions.
 
 ---
 
 # Task #67 (Commenting & Documentation)
 
-## Find an example of poorly commented code and rewrite the comments to be more useful.
+## Find an example of poorly commented code and rewrite the comments to be more useful
+
 - Example of poorly commented code:
+
 ```python
 def calc(self, wet_thickness, solid_content):
     """
@@ -252,9 +269,11 @@ def calc(self, wet_thickness, solid_content):
     """
     return wet_thickness * (1 - solid_content) * self.density
 ```
-  - The comment here does not provide meaningful context to the code. 
-  - It does not explain what the calculation is for and what each parameter represent. 
+
+- The comment here does not provide meaningful context to the code.
+- It does not explain what the calculation is for and what each parameter represent.
 - Rewriting the comments:
+
 ```python
 def calc(self, wet_thickness, solid_content):
     """
@@ -269,15 +288,18 @@ def calc(self, wet_thickness, solid_content):
     """
     return wet_thickness * (1 - solid_content) * self.density
 ```
-  - The comment now explains the purpose of the function, what each parameter represents, and what the return value is.
-  - This would help someone reading the code to understand what this function is for.
 
-## When should you add comments? 
+- The comment now explains the purpose of the function, what each parameter represents, and what the return value is.
+- This would help someone reading the code to understand what this function is for.
+
+## When should you add comments?
+
 - When the reason behind the code is not obvious.
 - When explaining complex algorithms, business rules, or edge cases.
 - When documenting public APIs, modules, or functions for other developers.
 
 ## When should you avoid comments and instead improve the code?
+
 - Comments should be avoided when the code itself can clearly convey its purpose.
 - This includes obvious operations and poorly named variables or functions.
 - In the example above, instead of commenting "Performs calculation", rename the function to be self-explanatory (e.g. calculate_initial_solvent_mass).
@@ -287,17 +309,22 @@ def calc(self, wet_thickness, solid_content):
 # Task #68 (Handling Errors & Edge Cases)
 
 ## What was the issue with the original code?
+
 - Original code:
+
 ```javascript
 function getFirstCharacter(str) {
     return str[0]; 
 }
 ```
+
 - The issue with this function is that it assumes that the parameter will always be a non-empty string.
 - If the parameter is undefined or null, the code will crash or return unexpected results.
 
 ## How does handling errors improve reliability?
+
 - Refactored function:
+
 ```javascript
 function getFirstCharacter(str) {
     // Guard clause: handle invalid input
@@ -308,6 +335,7 @@ function getFirstCharacter(str) {
     return str[0];
 }
 ```
+
 - The function now fails gracefully by returning a null value to avoid runtime crashes.
 - Edge cases are managed, making the function more maintainable and reduces debugging time by logging the error.
 
@@ -316,17 +344,22 @@ function getFirstCharacter(str) {
 # Task #69 (Writing Unit Tests for Clean Code)
 
 ## Choose a testing framework
+
 - I installed Jest for JavaScript on my local machine.
 
-## Write a few unit tests for a function in your test repo.
+## Write a few unit tests for a function in your test repo
+
 - Function to be tested:
+
 ```javascript
 function sum(a, b) {
   return a + b;
 }
 module.exports = sum;
 ```
+
 - Unit tests:
+
 ```javascript
 const sum = require('./sum');
 
@@ -342,13 +375,17 @@ test('sums with only one argument', () => {
   expect(sum(2)).toBe(null);
 });
 ```
+
 - Screenshot of running unit tests via CLI:
 ![Screenshot of running unit tests](images/unit_test_evidence.png)
 
 ## How do unit tests help keep code clean?
+
 - Ensure functions behave as expected, including edge cases.
 - Encourage modular, single-purpose functions that are easier to read and maintain.
-- 
+-
+
 ## What issues did you find while testing?
+
 - Initially, the function returned NaN when only one parameter was passed into the function.
 - I added a guard clause to help improve the function's error handling by returning a null value if one of the parameters are not being passed into the function.
