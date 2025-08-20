@@ -204,3 +204,37 @@ function calculateCylinderVolume(radius, height) {
 - By extracting the duplicated logic into a single function, I made the code more maintainable and easier to extend. 
 - Now, if the formula for calculating a circle’s area ever changes, I only need to update it once.
 - This improves readability, reduces the chance of bugs, and keeps the codebase clean.
+
+---
+
+# Task #66 (Refactoring Code for Simplicity)
+
+## What made the original code complex?
+- Example of complex code:
+```javascript
+function calculateTotal(items) {
+  let total = 0;
+  for (let i = 0; i < items.length; i++) {
+    if (items[i].price && items[i].quantity) {
+      total += items[i].price * items[i].quantity;
+    } else if (items[i].price && !items[i].quantity) {
+      total += items[i].price;
+    } else if (!items[i].price && items[i].quantity) {
+      total += 0; // ignore
+    } else {
+      total += 0; // ignore
+    }
+  }
+  return total;
+}
+```
+- The original code had redundant if-else checks for every combination of price and quantity, making it harder to read and maintain.
+
+## How did refactoring improve it?
+- After refactoring:
+```javascript
+function calculateTotal(items) {
+  return items.reduce((sum, item) => sum + (item.price || 0) * (item.quantity || 1), 0);
+}
+```
+- By using reduce and default values, the function became concise, easier to read, and maintainable. It also handles edge cases more elegantly without extra conditions.
