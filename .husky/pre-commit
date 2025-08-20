@@ -1,1 +1,1 @@
-npx markdownlint "**/*.md" "#node_modules"
+npx markdownlint "**/*.md" "#node_modules" --fix
