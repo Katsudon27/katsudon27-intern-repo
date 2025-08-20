@@ -282,3 +282,31 @@ def calc(self, wet_thickness, solid_content):
 - This includes obvious operations and poorly named variables or functions.
 - In the example above, instead of commenting "Performs calculation", rename the function to be self-explanatory (e.g. calculate_initial_solvent_mass).
 
+---
+
+# Task #68 (Handling Errors & Edge Cases)
+
+## What was the issue with the original code?
+- Original code:
+```javascript
+function getFirstCharacter(str) {
+    return str[0]; 
+}
+```
+- The issue with this function is that it assumes that the parameter will always be a non-empty string.
+- If the parameter is undefined or null, the code will crash or return unexpected results.
+
+## How does handling errors improve reliability?
+- Refactored function:
+```javascript
+function getFirstCharacter(str) {
+    // Guard clause: handle invalid input
+    if (!str) {
+        console.error("Invalid input: string is required.");
+        return null; // fail gracefully
+    }
+    return str[0];
+}
+```
+- The function now fails gracefully by returning a null value to avoid runtime crashes.
+- Edge cases are managed, making the function more maintainable and reduces debugging time by logging the error.
