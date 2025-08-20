@@ -310,3 +310,45 @@ function getFirstCharacter(str) {
 ```
 - The function now fails gracefully by returning a null value to avoid runtime crashes.
 - Edge cases are managed, making the function more maintainable and reduces debugging time by logging the error.
+
+---
+
+# Task #69 (Writing Unit Tests for Clean Code)
+
+## Choose a testing framework
+- I installed Jest for JavaScript on my local machine.
+
+## Write a few unit tests for a function in your test repo.
+- Function to be tested:
+```javascript
+function sum(a, b) {
+  return a + b;
+}
+module.exports = sum;
+```
+- Unit tests:
+```javascript
+const sum = require('./sum');
+
+test('sums positive numbers', () => {
+  expect(sum(1, 2)).toBe(3);
+});
+
+test('sums negative numbers', () => {
+  expect(sum(-1, -2)).toBe(-3);
+});
+
+test('sums with only one argument', () => {
+  expect(sum(2)).toBe(null);
+});
+```
+- Screenshot of running unit tests via CLI:
+![Screenshot of running unit tests](images/unit_test_evidence.png)
+
+## How do unit tests help keep code clean?
+- Ensure functions behave as expected, including edge cases.
+- Encourage modular, single-purpose functions that are easier to read and maintain.
+- 
+## What issues did you find while testing?
+- Initially, the function returned NaN when only one parameter was passed into the function.
+- I added a guard clause to help improve the function's error handling by returning a null value if one of the parameters are not being passed into the function.

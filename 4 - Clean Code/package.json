@@ -1,0 +1,12 @@
+{
+  "name": "4---clean-code",
+  "version": "1.0.0",
+  "main": "sum.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
