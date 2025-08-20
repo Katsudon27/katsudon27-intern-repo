@@ -15,8 +15,12 @@
 
 ## Example of messy code
 
+```
+
 function calc(a,b,c){
 let r=0; for(let i=0;i<a.length;i++){r+=a[i]*b[i]+c;} return r;}
+
+```
 
 ### Why it is difficult to read
 
@@ -27,6 +31,7 @@ let r=0; for(let i=0;i<a.length;i++){r+=a[i]*b[i]+c;} return r;}
 
 ## Cleaned-up ver
 
+```
 /**
   Calculates the sum of element-wise multiplication of two arrays plus a constant.
  */
@@ -40,6 +45,8 @@ function calculateSum(arr1, arr2, constant) {
 
     return total;
 }
+
+```
 
 ### Improvements made
 
@@ -88,16 +95,22 @@ function calculateSum(arr1, arr2, constant) {
 ## How did refactoring improve code readability?
 
 - Example of poor naming:
+
+```
 let a = 100;
 function doIt(x, y) {
   return x + y;
 }
+```
 
 - Refactored version:
+```
 let totalUsers = 100;
 function calculateSum(value1, value2) {
     return value1 + value2;
 }
+
+```
 
 - Refactoring made the code self-documenting, easier to follow, and reduced the cognitive load needed to understand what the code is doing.
 
@@ -112,6 +125,7 @@ function calculateSum(value1, value2) {
 ## How did refactoring improve the structure of the code?
 
 - Example of a long function:
+```
 function processOrders(orders) {
   let total = 0;
   for (let order of orders) {
@@ -125,9 +139,10 @@ function processOrders(orders) {
   }
   console.log(`Total revenue: ${total}`);
 }
+```
 
 - Refactored version:
-
+```
 function calculateDiscount(order) {
   if (order.quantity > 10) order.price *= 0.9;
 }
@@ -145,9 +160,14 @@ function calculateTotalRevenue(orders) {
   }
   return total;
 }
+```
 
 - Improvements made:
 
   - Each function now has a single responsibility.
   - Code is easier to read and understand.
   - Bugs are easier to trace, since logic is separated.
+
+---
+
+# Task #65 (Writing Small, Focused Functions)
