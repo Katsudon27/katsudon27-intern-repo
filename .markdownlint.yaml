@@ -1,0 +1,12 @@
+default: true  # Start with all default rules
+
+MD013: false  # Line length rule
+
+MD025: false # Multiple ehading in document rule
+
+MD033: false
+
+MD029: false
+
+# Fix any fixable errors
+fix: true

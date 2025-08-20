@@ -1,0 +1,7 @@
+{
+  "version": "0.2",
+  "language": "en-GB",
+  "dictionaries": ["en-gb"],
+  "ignorePaths": ["node_modules", "dist"],
+  "ignoreWords": ["Bitwarden", "Routinery's", "Tiimo", "Routinery", "katsudon", "linters", "Ning"]
+}

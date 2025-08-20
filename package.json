@@ -1,0 +1,16 @@
+{
+  "name": "katsudon27-intern-repo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cspell/dict-en-gb": "^5.0.12"
+  }
+}
