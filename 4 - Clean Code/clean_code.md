@@ -171,3 +171,36 @@ function calculateTotalRevenue(orders) {
 ---
 
 # Task #65 (Writing Small, Focused Functions)
+
+## Research the "Don't Repeat Yourself" (DRY) principle
+- The principle means that every piece of knowledge or logic should only exist in one place in your codebase. Duplication will lead to bugs and make it harder to maintain the codebase.
+
+## What were the issues with duplicated code?
+- Duplicated code example:
+```
+function calculateCircleArea(radius) {
+  return 3.14 * radius * radius;
+}
+
+function calculateCylinderVolume(radius, height) {
+  return 3.14 * radius * radius * height;
+}
+```
+- Duplicated code caused unnecessary repetition of the same logic across multiple functions. In this example, the formula for calculating the circle’s area was duplicated in both functions.
+- This made the code harder to maintain, since updating one formula would require changing it in several places.
+
+
+## How did refactoring improve maintainability?
+- After refactoring:
+```
+function calculateCircleArea(radius) {
+  return Math.PI * radius * radius;
+}
+
+function calculateCylinderVolume(radius, height) {
+  return calculateCircleArea(radius) * height;
+}
+```
+- By extracting the duplicated logic into a single function, I made the code more maintainable and easier to extend. 
+- Now, if the formula for calculating a circle’s area ever changes, I only need to update it once.
+- This improves readability, reduces the chance of bugs, and keeps the codebase clean.
