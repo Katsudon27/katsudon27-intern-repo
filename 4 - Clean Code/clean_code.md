@@ -238,3 +238,47 @@ function calculateTotal(items) {
 }
 ```
 - By using reduce and default values, the function became concise, easier to read, and maintainable. It also handles edge cases more elegantly without extra conditions.
+
+---
+
+# Task #67 (Commenting & Documentation)
+
+## Find an example of poorly commented code and rewrite the comments to be more useful.
+- Example of poorly commented code:
+```python
+def calc(self, wet_thickness, solid_content):
+    """
+    Performs calculation
+    """
+    return wet_thickness * (1 - solid_content) * self.density
+```
+  - The comment here does not provide meaningful context to the code. 
+  - It does not explain what the calculation is for and what each parameter represent. 
+- Rewriting the comments:
+```python
+def calc(self, wet_thickness, solid_content):
+    """
+    Calculates initial solvent mass per unit area.
+
+    Parameters:
+        wet_thickness (float): Initial wet coating thickness (m)
+        solid_content (float): Fraction of solids in slurry (0-1)
+
+    Returns:
+        float: Initial solvent mass per unit area (kg/m²)
+    """
+    return wet_thickness * (1 - solid_content) * self.density
+```
+  - The comment now explains the purpose of the function, what each parameter represents, and what the return value is.
+  - This would help someone reading the code to understand what this function is for.
+
+## When should you add comments? 
+- When the reason behind the code is not obvious.
+- When explaining complex algorithms, business rules, or edge cases.
+- When documenting public APIs, modules, or functions for other developers.
+
+## When should you avoid comments and instead improve the code?
+- Comments should be avoided when the code itself can clearly convey its purpose.
+- This includes obvious operations and poorly named variables or functions.
+- In the example above, instead of commenting "Performs calculation", rename the function to be self-explanatory (e.g. calculate_initial_solvent_mass).
+
