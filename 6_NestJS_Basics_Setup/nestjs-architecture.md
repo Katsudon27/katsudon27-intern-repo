@@ -2,6 +2,7 @@
 
 - I created a simple module with a controller and a service.
 - Module code snippet:
+
 ```ts
 import { Module } from '@nestjs/common';
 import { CatsController } from './cats.controller';
@@ -15,6 +16,7 @@ export class CatsModule {}
 ```
 
 - Controller code snippet:
+
 ```ts
 import { Controller, Get, Post, Body } from '@nestjs/common';
 import { CreateCatDto } from './dto/create-cat.dto';
@@ -38,6 +40,7 @@ export class CatsController {
 ```
 
 - Service code snippet:
+
 ```ts
 import { Injectable } from '@nestjs/common';
 import { Cat } from './interfaces/cats.interface';
@@ -56,7 +59,7 @@ export class CatsService {
 }
 ```
 
-# ✅ Reflection 
+# ✅ Reflection
 
 ## What is the purpose of a module in NestJS?
 
@@ -80,4 +83,3 @@ export class CatsService {
 - Uses `@Module()` to group related controllers and providers.
 - DI ensures controllers and providers are loosely coupled.
 - Each module handles a specific part of the application, thus promoting decoupling of code.
-
