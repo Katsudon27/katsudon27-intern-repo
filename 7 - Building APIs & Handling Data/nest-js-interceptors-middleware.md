@@ -1,8 +1,10 @@
 # Using Interceptors & Middleware in NestJS
 
 ## Task
+
 - I implemented a simple logging interceptor to log request and response data such as execution time
   - Interceptor (logging.interceptor.ts)
+
     ```javascript
     import { CallHandler, ExecutionContext, Injectable, NestInterceptor } from '@nestjs/common';
     import { Observable, tap } from 'rxjs';
@@ -20,7 +22,9 @@
         }
     }
     ```
+
   - Modifications in users.controller.ts to use the interceptor
+
     ```typescript
     import { Controller, Get, Post, Put, Delete, Param, Body, UseInterceptors } from '@nestjs/common';
     import { UsersService } from './users.service';
@@ -37,8 +41,10 @@
         }
     }
     ```
+
 - I implemented a simple middleware function and applied it globally.
   - Middleware
+
     ```javascript
     import { Request, Response, NextFunction } from 'express';
 
@@ -47,7 +53,9 @@
         next();
     }
     ```
+
   - Modifications in main.ts to use the middleware globally
+
     ```typescript
     import { NestFactory } from '@nestjs/core';
     import { AppModule } from './app.module';
@@ -60,6 +68,7 @@
     }
     bootstrap();
     ```
+
 - I used Postman to test both implementations of interceptor and middleware by sending a GET request to the server to retrieve all users:
   - Screenshot of generated logs in terminal:
     ![Screenshot of generated logs in terminal](images/middleware_interceptor_evidence.png)
