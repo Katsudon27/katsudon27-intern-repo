@@ -5,6 +5,7 @@
 - I managed to set up bullmq and @nestjs/bullmq by running "npm install bullmq @nestjs/bullmq ioredis"
 - I managed to create a simple job queue that processes a notification in the background:
   - Queue module:
+
     ```typescript
     import { Module } from '@nestjs/common';
     import { BullModule } from '@nestjs/bullmq';
@@ -28,7 +29,9 @@
     })
     export class NotificationModule {}
     ```
+
   - Queue service:
+
     ```typescript
       import { Injectable } from '@nestjs/common';
       import { Queue } from 'bullmq';
@@ -50,7 +53,9 @@
           }
       }
     ```
+
   - Processor:
+
     ```typescript
     import { Processor, WorkerHost } from '@nestjs/bullmq';
     import { Job } from 'bullmq';
@@ -64,7 +69,9 @@
         }
     }
     ```
+
   - Using the queue:
+
     ```typescript
     import { Injectable } from '@nestjs/common';
     import { NotificationQueueService } from './notification/notification-queue.service';
@@ -78,8 +85,10 @@
         }
     }
     ```
+
 - I also pulled the latest Redis image and ran a Redis server using Docker Desktop.
 - I called the sendNotification() in the user.controller to process the job in the background after receiving an API request:
+
 ```typescript
   @Get()
   async findAll() {
@@ -87,6 +96,7 @@
     return this.usersService.findAll();
   }
 ```
+
 - I tested the job queue and background task by using Postman to send an API request to the NestJS server. See screenshot below as evidence:
 ![Screenshot of generated logs in terminal](images/bullmq_evidence.png)
 
