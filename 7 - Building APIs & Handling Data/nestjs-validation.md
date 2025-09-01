@@ -1,8 +1,10 @@
 # Validating Requests with Pipes in NestJS
 
 ## Task
+
 - I created a custom DTO with decorators from class-validator.
   - DTO for creating a user:
+
     ```typescript
     import { IsString, IsEmail, IsInt, MinLength } from 'class-validator';
 
@@ -18,7 +20,9 @@
         age: number;
     }
     ```
+
   - Using the DTO in a controller:
+
     ```typescript
     import { Controller, Get, Post, Put, Delete, Param, Body, UseInterceptors } from '@nestjs/common';
     import { UsersService } from './users.service';
@@ -38,7 +42,9 @@
         }
     }
     ```
+
 - I used a global validation pipe to enforce DTO validation across the app in main.ts
+
   ```typescript
   import { NestFactory } from '@nestjs/core';
     import { AppModule } from './app.module';
@@ -53,6 +59,7 @@
     }
     bootstrap();
   ```
+
 - I tested the validation pipe by sending a POST request using Postman to create a user with both valid and invalid payloads:
   - Screenshot of response for invalid payload with wrong input types for email and age:
   ![Screenshot of response for invalid payload](images/invalid_payload_evidence.png)
