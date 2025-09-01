@@ -1,8 +1,10 @@
 # Creating REST APIs with NestJS
 
 ## Task
+
 - I created a service with simple business logic for managing users and a controller with basic CRUD routes in NestJS.
-    - Controller (users.controller.ts):
+  - Controller (users.controller.ts):
+
     ```javascript
     import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common';
     import { UsersService } from './users.service';
@@ -37,7 +39,9 @@
         }
     }
     ```
-    - Service (users.service.ts):
+
+  - Service (users.service.ts):
+
     ```javascript
     import { Injectable } from '@nestjs/common';
 
@@ -71,16 +75,17 @@
         }
     }
     ```
+
 - I tested the endpoints on the localhost URL where the nestJS server was running using Postman. See screenshots below as evidence:
-    - Sent a GET request to retrieve list of users
+  - Sent a GET request to retrieve list of users
     ![Screenshot of Postman output for GET request](images/GET_all%20users.png)
-    - Sent a GET request to retrieve info for user with id "1".
+  - Sent a GET request to retrieve info for user with id "1".
     ![Screenshot of Postman output for GET request](images/GET_specific%20user.png)
-    - Sent a POST request to create a new user.
+  - Sent a POST request to create a new user.
     ![Screenshot of Postman output for POST request](images/POST_new%20user.png)
-    - Sent a PUT request to update the name of user with id "1".
+  - Sent a PUT request to update the name of user with id "1".
     ![Screenshot of Postman output for PUT request](images/POST_new%20user.png)
-    - Sent a DELETE request to delete the user with id "1".
+  - Sent a DELETE request to delete the user with id "1".
     ![Screenshot of Postman output for DELETE request](images/DELETE_delete%20user.png)
 
 ## Reflection
