@@ -11,6 +11,7 @@
   - Great for small APIs or prototypes.
 - Example comparison: I created a simple GET /hello endpoint in both frameworks:
   - NestJS:
+
   ```typescript
   // hello.controller.ts
   import { Controller, Get } from '@nestjs/common';
@@ -23,7 +24,9 @@
     }
   }
   ```
+
   - ExpressJS:
+
   ```typescript
   // app.js
   const express = require('express');
@@ -33,6 +36,7 @@
     res.send('Hello from Express!');
   });
   ```
+
   - This demonstrated to me how NestJS encourages modular, testable code from the start, while Express requires more manual setup.
 
 ## Why does NestJS use decorators extensively?
@@ -40,6 +44,7 @@
 - To add metadata in a clear, declarative way such as defining routes and marking services.
 - For example, @Controller() marks a class as a controller and @Get() marks a method as an endpoint.
 - I used @Injectable() to create a service and injected it into a controller:
+
 ```typescript
 import { Injectable } from '@nestjs/common';
 
@@ -76,5 +81,6 @@ export class GreetingController {
 - When exploring the NestJS docs, I saw that modules can import each other, which allows teams to work on different features independently without breaking the app.
 
 ## Personal example
+
 While exploring NestJS for the first time, I created a small project for testing. NestJS’s decorators, modular structure, and DI container made the project much easier to navigate and extend. For example, adding a new TaskModule was as simple as generating a module with nest generate module task and wiring in the controller and service. Everything worked immediately without additional setup. See screenshot below as evidence:
 ![Screenshot of testing project's file directory](images/test_project_directory.png)
