@@ -121,7 +121,16 @@ function calculateSum(value1, value2) {
 
 ## Why is breaking down functions beneficial?
 
-- It can improve readability of the code because smaller functions.
+- Breaking down functions into smaller, focused ones provides multiple benefits:
+  - Improved readability: Each function has a clear purpose, making it easier for others (and my future self) to understand the flow of logic.
+  - Maintainability: When requirements change, I only need to update one small, relevant function instead of searching through a long block of code.
+  - Debugging efficiency: If a bug occurs, it’s simpler to pinpoint where the issue lies when the code is broken down into logical chunks.
+  - Reusability: Smaller functions can often be reused in different parts of the codebase, avoiding duplication.
+
+- For example, during a past project, I was working on creating a data visualisation using D3.js. Initially, I wrote one large function that handled data importing, event listeners, rendering of components, and interactive features all in one block. It quickly became messy, and I often struggled to locate where bugs were coming from. After refactoring, I split it into smaller functions such as loadData(), renderChart(), attachEventListeners(), and updateOnInteraction().
+- This significantly improved the readability of my code and made debugging much easier, since I could directly test whether loadData() was working without worrying about the rendering logic at the same time.
+- Screenshot as evidence:
+![Screenshot of refactored code using smaller functions](images/refactor_code_evidence.png)
 
 ## How did refactoring improve the structure of the code?
 
@@ -170,6 +179,7 @@ function calculateTotalRevenue(orders) {
   - Each function now has a single responsibility.
   - Code is easier to read and understand.
   - Bugs are easier to trace, since logic is separated.
+  - The structure is more modular, making future changes easier.
 
 ---
 
