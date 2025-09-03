@@ -5,7 +5,7 @@
 - Dependency injection (DI) improves maintainability by decoupling classes from the creation of their dependencies.
 - Instead of instantiating services manually, controllers and other components receive them from NestJS’s DI container.
 - This makes the code more modular and easier to test.
-- Personal example: While working on the Focus Bear onboarding repo, I created a UsersService to manage user-related logic like returning a list of users. Initially, I thought about creating a new instance of the service in each controller, but that quickly became repetitive and error-prone. 
+- Personal example: While working on the Focus Bear onboarding repo, I created a UsersService to manage user-related logic like returning a list of users. Initially, I thought about creating a new instance of the service in each controller, but that quickly became repetitive and error-prone.
 - Using DI, I simply applied @Injectable() to the service and let NestJS inject it into the UsersController automatically. This allowed me to change the internal logic of UsersService without touching the controller code at all.
 
 ## What is the purpose of the @Injectable() decorator?
@@ -14,6 +14,7 @@
 - Applying `@Injectable()` ensures that services can be injected into controllers, other services, or modules.
 - Example from my test project:
   - users.service.ts
+
   ```typescript
   @Injectable()
   export class UsersService {
@@ -29,7 +30,9 @@
     }
   }
   ```
+
   - users.controller.ts
+
   ```typescript
   @Controller('users')
   @UseInterceptors(LoggingInterceptor)
