@@ -143,5 +143,6 @@ class OrderManager {
 - Developers can understand and extend the codebase faster without needing to untangle messy logic.
 
 ## Personal example
-- In a previous project, I built a small inventory management system with my friends where we put everything (item info, database updates, notifications) inside one large Inventory class. It quickly became overwhelming whenever we tried to change the source code, we risked breaking some other unrelated features. 
+
+- In a previous project, I built a small inventory management system with my friends where we put everything (item info, database updates, notifications) inside one large Inventory class. It quickly became overwhelming whenever we tried to change the source code, we risked breaking some other unrelated features.
 - After refactoring into smaller, single-responsibility classes like Item and NotificationService, debugging became significantly easier. For example, I once had a bug in the database not being updated correctly, and because the logic was isolated, I only needed to check the corresponding class instead of digging through hundreds of lines in a bloated Inventory class.
