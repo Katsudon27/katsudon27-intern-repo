@@ -26,6 +26,7 @@
 - Requires Docker installation and system resources.
 
 ## Personal Experience
+
 Before working with Focus Bear, I had briefly used Docker in a data visualization project at university. Initially, I struggled because my local Python environment had conflicting library versions. After containerising the app, I found it much easier to share with teammates, since all they needed was Docker installed.
 
 Seeing Focus Bear’s setup made me realise that Docker makes it possible to launch both the FastAPI backend and the PostgreSQL database with one command. This is a huge improvement compared to manually installing and configuring everything. It also made me realise how much smoother development becomes when the whole stack is defined in containers.
