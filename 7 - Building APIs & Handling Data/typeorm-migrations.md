@@ -5,6 +5,7 @@
 ### Creating a new migration and apply it to the database
 
 - I created a data-source.ts in a new folder inside the root directory called "db".
+
 ```typescript
 import { DataSource, DataSourceOptions } from "typeorm";
 
@@ -25,6 +26,7 @@ export default dataSource;
 ```
 
 - I made modifications to the app.module.ts file:
+
 ```typescript
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
@@ -42,6 +44,7 @@ export class AppModule {}
 ```
 
 - I also added the following scripts to the package.json file in my NestJS application:
+
 ```json
 "typeorm": "npm run build && npx typeorm -d dist/db/data-source.js",
 "migration:generate": "npm run typeorm -- migration:generate",
@@ -51,6 +54,7 @@ export class AppModule {}
 
 - I ran the postgreSQL database and pgAdmin services using Docker.
 - I ran `npm run migration:generate -- db/migrations/NewMigration` using a terminal in the root directory of the NestJS application to generate a migration file as follows:
+
 ```typescript
 import { MigrationInterface, QueryRunner } from "typeorm";
 
@@ -67,6 +71,7 @@ export class NewMigration1757154134827 implements MigrationInterface {
 
 }
 ```
+
 - I ran `npm run migration:run` to execute the migration on the postgreSQL database.
 - Screenshot of successful execution of migration in terminal:
 ![Screenshot of successful execution of migration in terminal](images/migration_run_terminal.png)
@@ -77,6 +82,7 @@ export class NewMigration1757154134827 implements MigrationInterface {
 ### Seed sample data into PostgreSQL using TypeORM repositories
 
 - I created seed.ts in the src folder of the project's root directory:
+
 ```typescript
 import dataSource from '../db/data-source';
 import { User } from './users/user.entity';
@@ -97,6 +103,7 @@ seed().then(() => {
   console.error('Seeding failed:', err);
 });
 ```
+
 - I ran the following commands to seed the sample data in the terminal:
   - `npm run build`
   - `node dist/src/seed.js`
