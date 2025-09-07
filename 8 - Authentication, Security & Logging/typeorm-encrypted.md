@@ -1,7 +1,9 @@
 # Using typeorm-encrypted for Data Encryption
 
 ## Task
+
 - I implemented typeorm-encrypted in user.entity.ts:
+
 ```typescript
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 import { EncryptionTransformer } from "typeorm-encrypted";
