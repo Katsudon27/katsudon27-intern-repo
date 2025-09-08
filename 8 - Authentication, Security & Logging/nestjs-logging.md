@@ -4,6 +4,7 @@
 
 - I managed to set up structured logging with nestjs-pino by modifying the following files:
   - app.module.ts
+
 ```typescript
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
@@ -51,7 +52,9 @@ import { LoggerModule } from 'nestjs-pino';
     })
 export class AppModule {}
 ```
-  - main.ts
+
+- main.ts
+
 ```typescript
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
@@ -73,10 +76,12 @@ async function bootstrap() {
 }
 bootstrap();
 ```
+
 - The following screenshot shows the terminal log when a request is received by the application in structured JSON:
 ![Screenshot of terminal log when a request is received by the application in structured JSON](images/structured_JSON_evidence.png)
 
 - I implemented a custom exception filter to format API error responses (http-exception.filter.ts)
+
 ```typescript
 import {
   ExceptionFilter,
@@ -112,7 +117,9 @@ export class HttpExceptionFilter implements ExceptionFilter {
   }
 }
 ```
+
 - I made modifications to app.controller.ts to utilise the exception filter:
+
 ```typescript
 import { Controller, Get, HttpException, HttpStatus } from '@nestjs/common';
 import { AppService } from './app.service';
@@ -142,6 +149,7 @@ export class AppController {
   }
 }
 ```
+
 - Screenshot below shows the formatted JSON error response object in Postman from the custom filter:
 ![Screenshot of the formatted JSON error response object in Postman](images/custom_filter_evidence.png)
 
