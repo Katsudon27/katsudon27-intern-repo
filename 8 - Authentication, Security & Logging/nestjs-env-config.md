@@ -12,6 +12,7 @@ DB_NAME=focusbear
 `
 
 - I modified the app.module.ts to use the environment variables:
+
 ```typescript
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
@@ -72,6 +73,7 @@ export class AppModule {}
 ```
 
 - I added an endpoint in app.controller.ts to test the access of environment variables:
+
 ```typescript
   @Get('config-test')
   getConfig() {
@@ -99,8 +101,6 @@ export class AppModule {}
 - Prevents accidental leaks in version control.
 - Reduces risk if repo is shared or compromised.
 - Keeps sensitive values changeable without code changes.
-
-
 
 ### How can you validate environment variables before the app starts?
 
