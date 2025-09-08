@@ -1,8 +1,9 @@
 # Security Best Practices in NestJS
 
-## Task 
+## Task
 
 - I implemented request rate limiting using @fastify/rate-limit and secured HTTP headers with @fastify/helmet by modifying main.ts:
+
 ```typescript
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
