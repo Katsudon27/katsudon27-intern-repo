@@ -143,3 +143,72 @@ describe('CatList component', () => {
 - Not mocking rejected promises which leads unhandled errors in tests.
 - Over-mocking with tests that don’t reflect real behavior.
 - Using real APIs by accident resulting in flaky tests.
+
+## 74 - Testing React Components with Jest & React Testing Library
+
+### Task
+
+- I created a simple React component that displays a message and the number of clicks for a button (Message.tsx):
+
+```ts
+import React, { useState } from 'react';
+
+export function Message() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Hello, user!</p>
+      <p>Button clicked: {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+    </div>
+  );
+}
+```
+
+- I created tests that checks if the component renders the message correctly and simulates user interaction of clicking the rendered button (Message.test.tsx):
+
+```ts
+import React from 'react';
+import { render, screen, fireEvent } from '@testing-library/react';
+import { Message } from './Message';
+
+describe('Message component', () => {
+  it('renders the message', () => {
+    render(<Message />);
+    expect(screen.getByText(/Hello, user!/i)).toBeInTheDocument();
+    expect(screen.getByText(/Button clicked: 0 times/i)).toBeInTheDocument();
+  });
+
+  it('increments count when button is clicked', () => {
+    render(<Message />);
+    const button = screen.getByText(/Click me/i);
+
+    fireEvent.click(button);
+    expect(screen.getByText(/Button clicked: 1 times/i)).toBeInTheDocument();
+
+    fireEvent.click(button);
+    expect(screen.getByText(/Button clicked: 2 times/i)).toBeInTheDocument();
+  });
+});
+```
+
+- To run the test, I ran the command `npm test Message.test.tsx` in the terminal. The screenshot below shows the component passing the unit test:
+![Screenshot of successful test](images/react_component_test.png)
+
+- I pushed the test to my GitHub repository which can be found here:
+[<https://github.com/Katsudon27/focusbear_test_project/commit/2170ea1d7e83bbda444a78da36e7537a3b0ad001>](https://github.com/Katsudon27/focusbear_test_project/commits/master/)
+
+### Reflection
+
+#### What are the benefits of using React Testing Library instead of testing implementation details?
+
+- Tests focus on what the user sees/interacts with, not internal state.
+- Less brittle as refactoring internals doesn’t break tests.
+- Encourages accessibility through queries like getByRole and getByLabelText.
+
+#### What challenges did you encounter when simulating user interaction?
+
+- Some events (like input typing) require fireEvent.change or userEvent.type.
+- Selecting elements correctly using queries (getByText, getByRole) can be tricky.
+- For example in Message.test.tsx, I had to be really careful to specify the text that would in theory be displayed when the button is clicked.
