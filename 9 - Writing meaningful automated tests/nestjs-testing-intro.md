@@ -3,6 +3,7 @@
 ## Task
 
 - I added a simple method to users.service.ts:
+
 ```typescript
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -29,6 +30,7 @@ export class UsersService {
 ```
 
 - I created a simple test using Jest by modifying users.service.spec.ts
+
 ```ts
 import { Test, TestingModule } from '@nestjs/testing';
 import { UsersService } from './users.service';
