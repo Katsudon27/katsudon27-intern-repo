@@ -125,6 +125,9 @@ describe('CatList component', () => {
 - To run the test, I ran the command `npm test CatList.test.tsx` in the terminal. The screenshot below shows the component passing the unit test:
 ![Screenshot of successful test](images/mocking_api_test.png)
 
+- I pushed the test to my GitHub repository which can be found here:
+https://github.com/Katsudon27/focusbear_test_project/commit/2170ea1d7e83bbda444a78da36e7537a3b0ad001
+
 ### Reflection
 
 #### Why is it important to mock API calls in tests?
