@@ -1,8 +1,9 @@
-#  Writing Unit Tests for Services & Controllers in NestJS
+# Writing Unit Tests for Services & Controllers in NestJS
 
 ## Task
 
 - I created a simple NestJS service called cats.service.ts:
+
 ```ts
 import { Injectable } from '@nestjs/common';
 
@@ -19,7 +20,9 @@ export class CatsService {
     }
 }
 ```
+
 - I created a simple NestJS controller called cats.controller.ts:
+
 ```ts
 import { Controller, Get, Param } from '@nestjs/common';
 import { CatsService } from './cats.service';
@@ -41,6 +44,7 @@ export class CatsController {
 ```
 
 - I created wrote a unit test for cats.service by modifying cats.service.spec.ts:
+
 ```ts
 import { Test, TestingModule } from '@nestjs/testing';
 import { CatsService } from './cats.service';
@@ -75,6 +79,7 @@ describe('CatsService', () => {
 ```
 
 - I created wrote a unit test for cats.controller by modifying cats.service.spec.ts and using jest.mock:
+
 ```ts
 import { CatsController } from './cats.controller';
 import { CatsService } from './cats.service';
@@ -128,7 +133,7 @@ describe('CatsController with jest.mock', () => {
 ### What are common pitfalls when writing unit tests in NestJS?
 
 - Forgetting to mock dependencies → Nest can’t resolve providers.
-- Writing integration tests instead of unit tests by accident. 
+- Writing integration tests instead of unit tests by accident.
 - Not testing edge cases (null, empty arrays, errors).
 - Over-mocking (tests don’t reflect real usage).
 
