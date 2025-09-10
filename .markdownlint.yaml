@@ -8,5 +8,7 @@ MD033: false
 
 MD029: false
 
+MD024: false
+
 # Fix any fixable errors
 fix: true
