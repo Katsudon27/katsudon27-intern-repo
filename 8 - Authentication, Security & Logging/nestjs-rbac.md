@@ -1,8 +1,10 @@
 # Authentication in NestJS with Auth0 & JWT
 
 ## Task
+
 - I managed to set up a simple authentication flow using Auth0 in a NestJS app by providing access to a specific endpoint for admin users only.
 - I created a roles.decorator.ts file:
+
 ```typescript
 import { SetMetadata } from '@nestjs/common';
 
@@ -11,6 +13,7 @@ export const Roles = (...roles: string[]) => SetMetadata(ROLES_KEY, roles);
 ```
 
 - I created a roles.guard.ts file:
+
 ```typescript
 import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
@@ -62,6 +65,7 @@ export class RolesGuard implements CanActivate {
 ```
 
 - - I created a admin.controller.ts file to set up custom endpoint for admin users:
+
 ```typescript
 import { Controller, Get, UseGuards } from '@nestjs/common';
 import { Roles } from 'src/roles/roles.decorator';
@@ -81,6 +85,7 @@ export class AdminController {
 - I used the Auth0 dashboard to perform the following steps:
   - I created a Auth0 account.
   - I created a custom Action to inject roles in access tokens after a user has logged in:
+
   ```javascript
   exports.onExecutePostLogin = async (event, api) => {
   const assignedRoles = (event.authorization || {}).roles;
@@ -93,19 +98,23 @@ export class AdminController {
         }
     };
   ```
+
   - I deployed the custom action by attaching it to the Post Login trigger.
   - I created a role called "admin" and a sample user with the created role attached to it.
   - I created a custom API called Focusbear API and enabled RBAC settings for the API.
   - I created a sample Regular Web Applications called FocusBear Test App with the custom API attached to it.
-- Using the credentials from the sample web app, I managed to log in as the sample user by browsing the following link in the web browser (https://YOUR_TENANT_DOMAIN/authorize?response_type=token&client_id=YOUR_CLIENT_IDredirect_uri=http://localhost:3000/callbackaudience=https://focusbear/api&scope=openid profile email)
+- Using the credentials from the sample web app, I managed to log in as the sample user by browsing the following link in the web browser (https://YOUR_TENANT_DOMAIN/authorize?response_type=token&client_id=YOUR_CLIENT_IDredirect_uri=<http://localhost:3000/callbackaudience=https://focusbear/api&scope=openid> profile email)
 - After successful login, I was able to retrieve the JWT access token from the embedded URL on the web browser, which was tested by decoding via jwt.io.
 - To test RBAC on the Nestjs server, I used Postman to send a GET request to the created admin endpoint with an Authorization header added along with the bearer token and a success message was shown, indicating successful authentication of user:
+
 ```json
 {
     "message": "Welcome, Admin! You have access."
 }
 ```
+
 - If the header and token were not attached as part of the GET request, the following error was shown:
+
 ```json
 {
     "success": false,
@@ -118,6 +127,7 @@ export class AdminController {
     "timestamp": "2025-09-10T01:36:14.428Z"
 }
 ```
+
 - Screenshot of successful authentication as evidence:
 ![Screenshot of successful authentication in Postman](images/jwt_success_authentication.png)
 
