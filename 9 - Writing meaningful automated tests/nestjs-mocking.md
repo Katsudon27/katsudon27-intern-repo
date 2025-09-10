@@ -1,6 +1,7 @@
 # 📌 Mocking Dependencies & Database Interactions in NestJS
 
 ## Task
+
 - I used jest.fn() to mock a service inside a controller test (users.controller.spec.ts)
   
 ```ts
