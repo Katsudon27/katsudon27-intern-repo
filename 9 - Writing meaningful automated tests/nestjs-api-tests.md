@@ -1,7 +1,9 @@
 # Using Jest & Supertest for API Testing in NestJS
 
 ## Task
+
 - I created integration tests for a simple GET API endpoint and a simple POST API endpoint (cats.e2e-spec.ts)
+
 ```ts
 import request from 'supertest';
 import { Test } from '@nestjs/testing';
@@ -52,6 +54,7 @@ describe('Cats API (e2e)', () => {
 ```
 
 - I mocked authentication in API tests by providing test JWTs (admin.e2e-spec.ts)
+
 ```ts
 import { Test } from '@nestjs/testing';
 import { INestApplication, ExecutionContext, CanActivate, UnauthorizedException, ForbiddenException } from '@nestjs/common';
