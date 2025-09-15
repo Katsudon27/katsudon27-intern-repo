@@ -1,6 +1,6 @@
 # When to Use Google, AI Tools, or Ask for Help?
 
-## Tasks 
+## Tasks
 
 - I created a flowchart to outline scenarios where each resource would be most appropriate:
 ![Screenshot of decision-making framework](images/decision_making_framework.png)
