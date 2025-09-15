@@ -1,7 +1,9 @@
 # Understanding the Focus Bear Coverage Bar & Writing Meaningful Tests
 
 ## Task
+
 - I created a math.service.ts for testing purposes by running `nest g service math`.
+
 ```ts
 import { Injectable } from '@nestjs/common';
 
@@ -19,6 +21,7 @@ export class MathService {
 ```
 
 - The command also generated a math.service.spec.ts file with a weak test that expects the service to be defined:
+
 ```ts
 import { Test, TestingModule } from '@nestjs/testing';
 import { MathService } from './math.service';
@@ -44,6 +47,7 @@ describe('MathService', () => {
 ![Screenshot of coverage report before changes](images/covrage_report_before_changes.png)
 
 - The initial coverage report only met 62.5% of test coverage, thus I made modifications to math.service.spec.ts to add more tests and ensure each of them have proper assertions:
+
 ```ts
 import { MathService } from './math.service';
 
@@ -72,6 +76,7 @@ describe('MathService (good)', () => {
 ![Screenshot of coverage report after changes](images/covrage_report_after_changes.png)
 
 ## Reflection
+
 ### What does the coverage bar track, and why is it important?
 
 - It shows what percentage of statements, branches, functions, and lines are executed by tests, which are important to help spot untested code.
