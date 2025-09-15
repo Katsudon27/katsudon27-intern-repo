@@ -3,7 +3,7 @@
 ## Tasks
 
 - I installed Bruno and created a new API collection called Testing Project API
-- I manually added a tested a simple POST endpoint for my nestjs project by sending a POST request to http://localhost:3000/math/add using Bruno:
+- I manually added a tested a simple POST endpoint for my nestjs project by sending a POST request to <http://localhost:3000/math/add> using Bruno:
 ![Screenshot of sending POST reqeust in Bruno](images/bruno_test_endpoint.png)
 - I tested how authentication tokens can be passed in Bruno by adding a header to the request with Authorization as the key and the token as the Value:
 ![Screenshot of using authentication in Bruno](images/bruno_test_authentication.png)
