@@ -3,6 +3,7 @@
 ## Task
 
 - I modified cats.controller.ts to log request payloads and headers:
+
 ```ts
 import { Controller, Get, Param, Post, Body, Logger, Req, Inject } from '@nestjs/common';
 import { CatsService } from './cats.service';
@@ -38,6 +39,7 @@ export class CatsController {
 ![Screenshot of API response in Postman](images/api_postman.png)
 
 - I added a logging.interceptor.ts to modify and analyze API responses
+
 ```ts
 import { Injectable, NestInterceptor, ExecutionContext, CallHandler, Logger as NestLogger, Inject } from '@nestjs/common';
 import { Observable, tap } from 'rxjs';
@@ -62,6 +64,7 @@ export class LoggingInterceptor implements NestInterceptor {
 ```
 
 - I modified main.ts to use the created interceptor:
+
 ```ts
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
@@ -95,6 +98,7 @@ bootstrap();
 ![Screenshot of the terminal](images/api_terminal_logging.png)
 
 ## Reflection
+
 ### How can logging request payloads help with debugging?
 
 - Shows the exact data your endpoint receives
