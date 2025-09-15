@@ -3,6 +3,7 @@
 ## Task
 
 - I managed to set up a launch configuration (launch.json) for debugging
+
 ```json
 {
   "version": "0.2.0",
@@ -22,6 +23,7 @@
 ```
 
 - I created a math.service.ts for subsequent testing:
+
 ```ts
 import { Injectable } from '@nestjs/common';
 
@@ -40,6 +42,7 @@ export class MathService {
 ```
 
 - I created a math.controller.ts for subsequent testing:
+
 ```ts
 import { Controller, Post, Body } from '@nestjs/common';
 import { MathService } from './math.service';
@@ -60,7 +63,6 @@ export class MathController {
 
 - I placed breakpoints in both of the service and controller files to inspect response handing as shown in the following screenshot after running the Run and Debug feature from VS Code and sending a GET request using Postman:
 ![Screenshot of the controller with breakpoints](images/breakpoint_controller.png)
-
 
 - I then stepped through function execution and observe variable values by using F10/F11 key.
 ![Screenshot of stepping through the function execution](images/stepping_function_execution.png)
